@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 Dashboard</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body>
+  <!-- Trail canvas -->
+  <canvas id="trail" class="trail"></canvas>
+
+  <!-- Cursor label -->
+  <div class="cursor-label" id="cursor-label"></div>
+
+  <!-- Декоративные кубы -->
+  <div class="decor decor--cube-1" data-depth="1.4"></div>
+  <div class="decor decor--cube-2" data-depth="0.8"></div>
+  <div class="decor decor--cube-3" data-depth="1.1"></div>
+
+  <!-- Header -->
+  <header class="header glass">
+    <a class="logo" href="#">PK<span class="logo__dot">.</span></a>
+    <nav class="nav">
+      <a href="#" class="js-theme-toggle">🌗 Тема</a>
+      <button class="btn btn--ghost" id="clear-all" data-cursor="ОЧИСТИТЬ">Очистить</button>
+      <div class="add-menu">
+        <button class="btn btn--primary" id="add-toggle" data-cursor="ДОБАВИТЬ">
+          ➕ Добавить <span class="add-menu__caret">▾</span>
+        </button>
+        <ul class="add-menu__list glass" id="add-list" hidden>
+          <li><button class="add-menu__item" data-add="profile"><span>🏆</span><div><b>Профиль CS2</b><small>Ранг, K/D, HS%, winrate</small></div></button></li>
+          <li><button class="add-menu__item" data-add="maps"><span>🗺</span><div><b>Винрейт карт</b><small>Mirage, Inferno, Nuke…</small></div></button></li>
+          <li><button class="add-menu__item" data-add="currency"><span>💵</span><div><b>Курсы валют</b><small>USD / EUR / TRY — Frankfurter API</small></div></button></li>
+          <li><button class="add-menu__item" data-add="weather"><span>☁️</span><div><b>Погода в СПб</b><small>Open-Meteo API</small></div></button></li>
+          <li><button class="add-menu__item" data-add="cheapshark"><span>🎮</span><div><b>Скидки на игры</b><small>CheapShark API</small></div></button></li>
+          <li><button class="add-menu__item" data-add="trivia"><span>🧠</span><div><b>Викторина</b><small>Open Trivia DB</small></div></button></li>
+          <li><button class="add-menu__item" data-add="dog"><span>🐶</span><div><b>Случайная собака</b><small>Dog CEO API</small></div></button></li>
+          <li><button class="add-menu__item" data-add="emoji-mix"><span>🎨</span><div><b>Микс эмодзи</b><small>EmojiMix API</small></div></button></li>
+          <li><button class="add-menu__item" data-add="todo"><span>📝</span><div><b>Чеклист игрока</b><small>Список задач</small></div></button></li>
+          <li><button class="add-menu__item" data-add="quote"><span>💬</span><div><b>Цитата дня</b><small>Случайная мотивация</small></div></button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+
+    <p class="hero__eyebrow reveal">ИГРОВАЯ СТАТИСТИКА / CS2</p>
+    <h1 class="hero__title reveal" data-kinetic>DASHBOARD</h1>
+  </section>
+
+  <!-- Dashboard -->
+  <main id="dashboard" class="dashboard" aria-live="polite"></main>
+
+  <!-- Footer -->
+  <footer class="footer glass">
+    <div class="footer__row">
+      <span>CS2 Dashboard · виджеты на API</span>
+      <span id="clock">--:--:--</span>
+    </div>
+    <div class="footer__row footer__row--muted">
+      <span>© 2025 · сделано на чистом JS (ES-модули, ООП)</span>
+      <span>Unbounded + Montserrat</span>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
